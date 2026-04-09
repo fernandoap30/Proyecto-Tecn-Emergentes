@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Polera Oversize",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+    "description": "Polera urbana cómoda"
+  },
+  {
+    "id": 2,
+    "name": "Jeans Slim",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d",
+    "description": "Jeans modernos"
+  }
+]

@@ -1,16 +1,36 @@
-# React + Vite
+# CatoModa - Street Style Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Antes de ejecutar este proyecto, asegúrate de tener instalados:
 
-Currently, two official plugins are available:
+- **Node.js** versión 16.0.0 o superior
+- **npm** versión 7.0.0 o superior (viene con Node.js)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Verifica tu instalación:
+```bash
+node --version
+npm --version
+```
 
-## React Compiler
+## 🚀 Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clona o descarga el proyecto**:
+```bash
+cd Proyecto-Tecn-Emergentes
+```
 
-## Expanding the ESLint configuration
+2. **Instala las dependencias**:
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ▶️ Ejecución en Desarrollo
+
+Para iniciar el servidor de desarrollo con recarga en caliente (HMR):
+
+```bash
+npm run dev
+```
+
+El servidor se iniciará en `http://localhost:5173/` (o el puerto que muestre en tu terminal).
+
+Nota: La aplicación se recargará automáticamente cuando hagas cambios en el código.

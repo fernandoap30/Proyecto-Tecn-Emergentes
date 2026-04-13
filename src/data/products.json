@@ -3,14 +3,48 @@
     "id": 1,
     "name": "Polera Oversize",
     "price": 80,
-    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
-    "description": "Polera urbana cómoda"
+    "stock": 15,
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=500&fit=crop",
+    "description": "Polera urbana cómoda y versátil. Perfecta para cualquier ocasión casual. Material 100% algodón de alta calidad con acabado premium."
   },
   {
     "id": 2,
     "name": "Jeans Slim",
     "price": 120,
-    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d",
-    "description": "Jeans modernos"
+    "stock": 12,
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=500&h=500&fit=crop",
+    "description": "Jeans slim fit modernos con corte perfecto. Ideal para un look sofisticado y elegante. Tela elástica con excelente durabilidad."
+  },
+  {
+    "id": 3,
+    "name": "Chaqueta Denim",
+    "price": 150,
+    "stock": 8,
+    "image": "https://images.unsplash.com/photo-1537465978529-d23b17165b3b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Clásica chaqueta de mezclilla con diseño atempora. Perfecta para capas en cualquier temporada. Bolsillos funcionales y cierre seguro."
+  },
+  {
+    "id": 4,
+    "name": "Pantalón Cargo",
+    "price": 100,
+    "stock": 20,
+    "image": "https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Pantalón cargo con múltiples bolsillos. Estilo urbano y funcional. Cómodo para el día a día con tela resistente."
+  },
+  {
+    "id": 5,
+    "name": "Hoodie Premium",
+    "price": 130,
+    "stock": 18,
+    "image": "https://blvck.com/cdn/shop/files/charcoal_e1ae98e2-38bc-4220-9859-3a1049571183.jpg?v=1750627236&width=640",
+    "description": "Hoodie de calidad premium con acabados impecables. Cordones de calidad y bolsillos laterales cómodos para tu estilo casual."
+  },
+  {
+    "id": 6,
+    "name": "Sneakers Urbanos",
+    "price": 140,
+    "stock": 10,
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&h=500&fit=crop",
+    "description": "Zapatillas diseñadas para el estilo urbano. Suela cómoda para todo el día. Disponibles en múltiples colores modernos."
   }
 ]

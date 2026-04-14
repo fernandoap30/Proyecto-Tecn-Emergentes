@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import products from "../data/products.json";
+import { getProducts } from "../utils/productStorage";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
@@ -15,7 +15,7 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
 
-  const product = products.find(p => p.id == id);
+  const product = getProducts().find(p => p.id == id);
 
   if (!product) {
     return (
@@ -45,9 +45,7 @@ export default function ProductDetail() {
 
     setIsAdding(true);
     
-    for (let i = 0; i < quantity; i++) {
-      addToCart(product);
-    }
+    addToCart(product, quantity);
 
     addToast(`${quantity} ${quantity === 1 ? "producto" : "productos"} agregado(s) al carrito`, "success");
     setIsAdding(false);

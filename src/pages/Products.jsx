@@ -1,5 +1,5 @@
-import { useState } from "react";
-import products from "../data/products.json";
+import { useEffect, useState } from "react";
+import { getProducts } from "../utils/productStorage";
 import ProductCard from "../components/ProductCard";
 import "./Products.css";
 
@@ -7,7 +7,13 @@ export default function Products() {
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("name");
 
-  const filtered = products.filter(p =>
+  const [productsData, setProductsData] = useState([]);
+
+  useEffect(() => {
+    setProductsData(getProducts());
+  }, []);
+
+  const filtered = productsData.filter(p =>
     p.name.toLowerCase().includes(search.toLowerCase()) ||
     p.description.toLowerCase().includes(search.toLowerCase())
   );
@@ -65,7 +71,7 @@ export default function Products() {
         </div>
       ) : (
         <div className="products-info">
-          <p>Mostrando {sorted.length} de {products.length} productos</p>
+          <p>Mostrando {sorted.length} de {productsData.length} productos</p>
         </div>
       )}
 

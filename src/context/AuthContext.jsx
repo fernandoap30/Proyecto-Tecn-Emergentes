@@ -16,23 +16,27 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (email, password) => {
-    // Validación básica
-    if (!email || !password) {
-      throw new Error("Email y contraseña son requeridos");
-    }
+  if (!email || !password) {
+    throw new Error("Email y contraseña son requeridos");
+  }
 
-    if (!email.includes("@")) {
-      throw new Error("Email inválido");
-    }
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    if (password.length < 4) {
-      throw new Error("La contraseña debe tener al menos 4 caracteres");
-    }
+  let userFound = users.find(u => u.email === email);
 
-    const userData = { email, name: email.split("@")[0] };
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    return userData;
+  if (!userFound) {
+    // registrar automáticamente
+    userFound = { email, password, name: email.split("@")[0] };
+    users.push(userFound);
+    localStorage.setItem("users", JSON.stringify(users));
+  } else {
+    if (userFound.password !== password) {
+      throw new Error("Contraseña incorrecta");
+    }
+  }
+
+  setUser(userFound);
+  localStorage.setItem("user", JSON.stringify(userFound));
   };
 
   const logout = () => {

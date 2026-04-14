@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
 import { useToast } from "../context/ToastContext";
+import { updateStock } from "../utils/productStorage";
 import "./Cart.css";
 
 export default function Cart() {
@@ -33,6 +34,8 @@ export default function Cart() {
     
     // Simular procesamiento de pago
     await new Promise(resolve => setTimeout(resolve, 1500));
+
+    updateStock(cart); 
     
     addToast("¡Pago exitoso! Gracias por tu compra.", "success", 4000);
     clearCart();

@@ -1,30 +1,27 @@
 import { createContext, useState, useEffect } from "react";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
+  const { user } = useContext(AuthContext);
   const [cart, setCart] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState(null);
 
   // Escuchar cambios en el usuario desde localStorage
   useEffect(() => {
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) {
-      try {
-        const userData = JSON.parse(savedUser);
-        setCurrentUser(userData);
-        loadCartForUser(userData.email);
-      } catch (error) {
-        console.error("Error cargando usuario:", error);
-        setIsLoading(false);
-      }
-    } else {
-      setCurrentUser(null);
-      setCart([]);
-      setIsLoading(false);
-    }
-  }, []);
+  if (user) {
+    setCurrentUser(user);
+    loadCartForUser(user.email);
+  } else {
+    setCurrentUser(null);
+    setCart([]);
+  }
+
+  setIsLoading(false);
+  }, [user]);
 
   // Cargar carrito del usuario desde localStorage
   const loadCartForUser = (email) => {
@@ -77,7 +74,7 @@ export const CartProvider = ({ children }) => {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, [currentUser]);
 
-  const addToCart = (product) => {
+  const addToCart = (product, quantity = 1) => {
     if (!currentUser) {
       return false; // Indicar que no hay usuario
     }
@@ -89,12 +86,12 @@ export const CartProvider = ({ children }) => {
         item.id === product.id
           ? { 
               ...item, 
-              quantity: Math.min(item.quantity + 1, item.stock || 999)
+              quantity: Math.min(item.quantity + quantity, item.stock || 999)
             }
           : item
       ));
     } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
+      setCart([...cart, { ...product, quantity: Math.min(quantity, product.stock || 999) }]);
     }
     return true;
   };

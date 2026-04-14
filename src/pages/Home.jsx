@@ -59,10 +59,10 @@ export default function Home() {
           <div className="featured-item">
             <div className="featured-image">
               <img 
-                src="https://images.unsplash.com/photo-1556821552-107d7cb4d5d9?w=300&h=300&fit=crop" 
-                alt="Hoodie"
+                src="https://blvck.com/cdn/shop/files/charcoal_e1ae98e2-38bc-4220-9859-3a1049571183.jpg?v=1750627236&width=640"
+                alt="Hoodie Premium"
               />
-            </div>
+            </div>  
             <h3>Hoodie Premium</h3>
             <p className="featured-price">S/ 130</p>
             <Link to="/products" className="featured-link">Ver todos</Link>
